@@ -1,0 +1,45 @@
+
+
+RU:
+Hpyml это модуль для новичков в Python и Html,CSS
+Благодаря объектно-ориентированной структуре писать на hpyml просто!
+
+Примеры в Examples!
+
+
+
+
+ENG:
+This is a module for beginners practicing paito and hmtl, css
+Thanks to the object-oriented design, writing in hpyml is easy!
+
+Examples in Examples!
+
+
+
+
+MAIN DOC:
+
+class hpyml
+(Hyper PYthon Markup Language)
+
+methods:
+hpyml.start(title="",filename="index",css_name="styles") start
+hpyml.end() end
+hpyml.css(params_css=None) writing to css file
+hpyml.html_text(params_html=None,class_=None) write to html file simple
+
+
+class block
+(hpyml.block())
+
+
+
+methods: 
+block.open(block="div",class_=None,attrs="",text="") create block like <div class = class_,attrs>text
+block.exit() exit block like </div>
+
+
+
+
+

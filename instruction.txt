@@ -1,0 +1,9 @@
+READ THE DOSC.TXT
+
+RU:
+Вам нужно скопировать и переместить файл hpyml в директорию с которой вы работаете!
+
+ENG:
+You need to copy and move the hpyml file to the directory you are working with!
+
+p.s. sorry for bad english
