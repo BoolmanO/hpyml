@@ -1,7 +1,7 @@
 #MODULE FILE
 class hpyml:
 
-    filename = ""
+    filename = "index"
 
 
 		
@@ -78,39 +78,43 @@ class hpyml:
                 
             f.close()
 
-    class block:
-        is_open = 0
+class block:
+	is_open = 0
+	filename = "index"
+	
+	
+	
 
-        def __init__(self,pyml):
-            self.filename = pyml.filename
+	def __init__(self):### f - filename
+		pass
 
-        def open(self,block="div",class_=None,attrs = "",text=""):
-            with open(f"{self.filename}.html","a") as f:
+	def open(self,block="div",class_=None,attrs = "",text=""):
+		with open(f"{self.filename}.html","a") as f:
 
-                if self.is_open == 1:
-                    return "BlockError"
-
-
-                if class_ is None:
-                    code = f"<{block} {attrs}>{text}"
-
-                else:
-                    code = f'<{block} {attrs} class = "{class_}">{text}'
-
-                self.name = block
+			if self.is_open == 1:
+				return "BlockError"
 
 
-                f.write(code)
-                f.write("\n")
-                self.is_open = 1
-                f.close()
+			if class_ is None:
+				code = f"<{block} {attrs}>{text}"
+
+			else:
+				code = f'<{block} {attrs} class = "{class_}">{text}'
+
+			self.name = block
+
+
+			f.write(code)
+			f.write("\n")
+			self.is_open = 1
+			f.close()
 
                 
-        def exit(self):
-            with open(f"{self.filename}.html","a") as f :
-                f.write(f"</{self.name}>")
-                f.write("\n")
-                f.close()
+	def exit(self):
+		with open(f"{self.filename}.html","a") as f :
+			f.write(f"</{self.name}>")
+			f.write("\n")
+			f.close()
 
 
 
