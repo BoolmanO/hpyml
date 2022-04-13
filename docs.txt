@@ -21,17 +21,18 @@ Examples in Examples!
 MAIN DOC:
 
 class hpyml
+pyml = hpyml(filename="index",css_name="style")
 (Hyper PYthon Markup Language)
 
 methods:
-hpyml.start(title="",filename="index",css_name="styles") start
+
 hpyml.end() end
 hpyml.css(params_css=None) writing to css file
 hpyml.html_text(params_html=None,class_=None) write to html file simple
 
 
 class block
-(hpyml.block())
+(pyml.block(pyml))
 
 
 
@@ -42,4 +43,4 @@ block.exit() exit block like </div>
 
 
 
-
+###version 1.1

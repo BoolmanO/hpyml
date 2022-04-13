@@ -3,12 +3,13 @@ from hpyml import hpyml
 #прочитайте examp1
 
 
-pyml = hpyml()
-
 #give names for files | filename - html, css_name - css
 #раздача имен файлам | filename - html, css_name - css
+pyml = hpyml(filename="textfile", css_name = "designfile")
 
-pyml.start(filename="textfile", css_name = "designfile")
+
+
+
 
 main = pyml.block(pyml)
 type_button = pyml.block(pyml)

@@ -1,13 +1,33 @@
 #MODULE FILE
+
+
+from os import path
+
+
+
+
 class hpyml:
 
     filename = ""
 
 
+
+
 		
-    def start(self,title="",filename="index",css_name="styles"):
+    def __init__(self,title="",filename="index",css_name="styles"):
+
+        self.main = path.abspath(path.dirname(__file__))
+
+        self.link_to_html = f"{self.main}\{filename}"
+        self.link_to_css = f"{self.main}\{css_name}"
+
+        print(self.link_to_html)
+        print(self.link_to_css) 
+        print(self.main)
+
+
 			
-        with open(f"{filename}.html","w+") as f:
+        with open(f"{self.link_to_html}.html","w+") as f:
             self.filename = filename
             self.css_name = css_name
 
@@ -30,18 +50,18 @@ class hpyml:
             f.close()
 				
 							
-            with open(f"{self.css_name}.css","w+") as f:
+            with open(f"{self.link_to_css}.css","w+") as f:
                 f.close()
 
 				
     def end(self):
-        with open(f"{self.filename}.html","a") as f:
+        with open(f"{self.link_to_html}.html","a") as f:
             f.write("</body>")
             f.write("\n")
             f.write("</html>")
     def css(self,params_css=None):
 				
-        with open(f"{self.css_name}.css","a") as f:
+        with open(f"{self.link_to_css}.css","a") as f:
             
             for obj in params_css:
                 l = params_css.get(obj)
@@ -63,7 +83,7 @@ class hpyml:
 
 
     def html_text(self,params_html=None,class_=None):
-        with open(f"{self.filename}.html","a") as f:
+        with open(f"{self.link_to_html}.html","a") as f:
             for obj in params_html:
 
                 text = params_html.get(obj)
@@ -83,9 +103,10 @@ class hpyml:
 
         def __init__(self,pyml):
             self.filename = pyml.filename
+            self.link_to_html = pyml.link_to_html
 
         def open(self,block="div",class_=None,attrs = "",text=""):
-            with open(f"{self.filename}.html","a") as f:
+            with open(f"{self.link_to_html}.html","a") as f:
 
                 if self.is_open == 1:
                     return "BlockError"
@@ -107,7 +128,7 @@ class hpyml:
 
                 
         def exit(self):
-            with open(f"{self.filename}.html","a") as f :
+            with open(f"{self.link_to_html}.html","a") as f :
                 f.write(f"</{self.name}>")
                 f.write("\n")
                 f.close()
