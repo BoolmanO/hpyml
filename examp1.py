@@ -2,6 +2,7 @@
 from hpyml import hpyml
 
 #старт, создание переменной для hpyml, обязателен
+<<<<<<< HEAD
 #принимает аргументы title,filename(название html файла),css_name(название css файла)
 #название вводится без расширения
 
@@ -13,6 +14,18 @@ pyml = hpyml()
 
 
 
+=======
+#start, creating a variable for hpyml, required
+pyml = hpyml()
+
+#метод start принимает аргументы title,filename(название html файла),css_name(название css файла)
+#название вводится без расширения
+
+#start method takes arguments title,filename(html file name),css_name(css file name)
+#name is entered without extension
+
+pyml.start()
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
 
 
 #создание переменной для блока1 #creating a variable for block1
@@ -34,7 +47,11 @@ block1.open(class_="main",text="Example text!")
 #простое массовое создание тега и текста в нем
 #simple mass creation of a tag and text in it
 #                 tag      text         тег      текст
+<<<<<<< HEAD
 pyml.html_text({ "p" : "2nd example", "h2" : "34th example" })
+=======
+pyml.html_text({ "p" : "2nd example", "h2" : "3th example" })
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
 
 
 #закрытие тега, не принимает параметров

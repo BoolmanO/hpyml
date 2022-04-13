@@ -3,6 +3,7 @@ from hpyml import hpyml
 #прочитайте examp1
 
 
+<<<<<<< HEAD
 #give names for files | filename - html, css_name - css
 #раздача имен файлам | filename - html, css_name - css
 pyml = hpyml(filename="textfile", css_name = "designfile")
@@ -10,6 +11,14 @@ pyml = hpyml(filename="textfile", css_name = "designfile")
 
 
 
+=======
+pyml = hpyml()
+
+#give names for files | filename - html, css_name - css
+#раздача имен файлам | filename - html, css_name - css
+
+pyml.start(filename="textfile", css_name = "designfile")
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
 
 main = pyml.block(pyml)
 type_button = pyml.block(pyml)

@@ -1,4 +1,5 @@
 #MODULE FILE
+<<<<<<< HEAD
 
 
 from os import path
@@ -28,6 +29,17 @@ class hpyml:
 
 			
         with open(f"{self.link_to_html}.html","w+") as f:
+=======
+class hpyml:
+
+    filename = "index"
+
+
+		
+    def start(self,title="",filename="index",css_name="styles"):
+			
+        with open(f"{filename}.html","w+") as f:
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
             self.filename = filename
             self.css_name = css_name
 
@@ -50,18 +62,30 @@ class hpyml:
             f.close()
 				
 							
+<<<<<<< HEAD
             with open(f"{self.link_to_css}.css","w+") as f:
+=======
+            with open(f"{self.css_name}.css","w+") as f:
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
                 f.close()
 
 				
     def end(self):
+<<<<<<< HEAD
         with open(f"{self.link_to_html}.html","a") as f:
+=======
+        with open(f"{self.filename}.html","a") as f:
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
             f.write("</body>")
             f.write("\n")
             f.write("</html>")
     def css(self,params_css=None):
 				
+<<<<<<< HEAD
         with open(f"{self.link_to_css}.css","a") as f:
+=======
+        with open(f"{self.css_name}.css","a") as f:
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
             
             for obj in params_css:
                 l = params_css.get(obj)
@@ -83,7 +107,11 @@ class hpyml:
 
 
     def html_text(self,params_html=None,class_=None):
+<<<<<<< HEAD
         with open(f"{self.link_to_html}.html","a") as f:
+=======
+        with open(f"{self.filename}.html","a") as f:
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
             for obj in params_html:
 
                 text = params_html.get(obj)
@@ -98,6 +126,7 @@ class hpyml:
                 
             f.close()
 
+<<<<<<< HEAD
     class block:
         is_open = 0
 
@@ -132,6 +161,46 @@ class hpyml:
                 f.write(f"</{self.name}>")
                 f.write("\n")
                 f.close()
+=======
+class block:
+	is_open = 0
+	filename = "index"
+	
+	
+	
+
+	def __init__(self):
+		
+		pass
+
+	def open(self,block="div",class_=None,attrs = "",text=""):
+		with open(f"{self.filename}.html","a") as f:
+
+			if self.is_open == 1:
+				return "BlockError"
+
+
+			if class_ is None:
+				code = f"<{block} {attrs}>{text}"
+
+			else:
+				code = f'<{block} {attrs} class = "{class_}">{text}'
+
+			self.name = block
+
+
+			f.write(code)
+			f.write("\n")
+			self.is_open = 1
+			f.close()
+
+                
+	def exit(self):
+		with open(f"{self.filename}.html","a") as f :
+			f.write(f"</{self.name}>")
+			f.write("\n")
+			f.close()
+>>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
 
 
 
