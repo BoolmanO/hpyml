@@ -85,7 +85,8 @@ class block:
 	
 	
 
-	def __init__(self):### f - filename
+	def __init__(self):
+		
 		pass
 
 	def open(self,block="div",class_=None,attrs = "",text=""):
