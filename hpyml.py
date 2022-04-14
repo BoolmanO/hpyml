@@ -1,5 +1,5 @@
 #MODULE FILE
-<<<<<<< HEAD
+
 
 
 from os import path
@@ -29,22 +29,7 @@ class hpyml:
 
 			
         with open(f"{self.link_to_html}.html","w+") as f:
-=======
-class hpyml:
-
-    filename = "index"
-
-
-		
-    def start(self,title="",filename="index",css_name="styles"):
-			
-        with open(f"{filename}.html","w+") as f:
->>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
-            self.filename = filename
-            self.css_name = css_name
-
-				
-            code = f"""
+        	code = f"""
 <!DOCTYPE html>
 <html>
 
@@ -61,13 +46,27 @@ class hpyml:
             f.write(code)
             f.close()
 				
-							
-<<<<<<< HEAD
-            with open(f"{self.link_to_css}.css","w+") as f:
+		with open(f"{self.css_name}.css","w+") as f:
+
+			f.close()
+            
+        	
+        	
+
+
+
+		
+    def start(self,title="",filename="index",css_name="styles"):
+			
+        with open(f"{filename}.html","w+") as f:
+
+            self.filename = filename
+            self.css_name = css_name
+
+				
+            
 =======
-            with open(f"{self.css_name}.css","w+") as f:
->>>>>>> 034f52f699c77184547e95ff969aa370a6222d7b
-                f.close()
+            
 
 				
     def end(self):
