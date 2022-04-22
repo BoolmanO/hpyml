@@ -9,7 +9,6 @@ from os import path
 
 class hpyml:
 
-    filename = ""
 
 
 
@@ -22,9 +21,7 @@ class hpyml:
         self.link_to_html = f"{self.main}\{filename}"
         self.link_to_css = f"{self.main}\{css_name}"
 
-        print(self.link_to_html)
-        print(self.link_to_css) 
-        print(self.main)
+
 
 
 			
@@ -37,7 +34,7 @@ class hpyml:
 <head>
 	<meta charset="UTF-8">
 	<title>{title}</title>
-	<link rel="stylesheet" href="{self.css_name}.css">		
+	<link rel="stylesheet" href="{self.link_to_css}.css">		
 </head>
 
 <body>
@@ -47,25 +44,12 @@ class hpyml:
             f.write(code)
             f.close()
 				
-        with open(f"{self.css_name}.css","w+") as f:
+        with open(f"{self.link_to_css}.css","w+") as f:
 
             f.close()
             
         	
-        	
-
-
-
-		
-    def start(self,title="",filename="index",css_name="styles"):
-			
-        with open(f"{filename}.html","w+") as f:
-
-            self.filename = filename
-            self.css_name = css_name
-
-				
-
+        
             
 
 				
@@ -126,43 +110,44 @@ class hpyml:
 
 
 class block:
-	is_open = 0
-	filename = "index"
+    is_open = 0
+    filename = "index"
+    pyml = ""
 	
 	
 	
 
-	def __init__(self):
+    def __init__(self,pyml):
 		
-		pass
+        self.filename = pyml.link_to_html
 
-	def open(self,block="div",class_=None,attrs = "",text=""):
-		with open(f"{self.filename}.html","a") as f:
+    def open(self,block="div",class_=None,attrs = "",text=""):
+        with open(f"{self.filename}.html","a") as f:
 
-			if self.is_open == 1:
-				return "BlockError"
-
-
-			if class_ is None:
-				code = f"<{block} {attrs}>{text}"
-
-			else:
-				code = f'<{block} {attrs} class = "{class_}">{text}'
-
-			self.name = block
+            if self.is_open == 1:
+                return "BlockError"
 
 
-			f.write(code)
-			f.write("\n")
-			self.is_open = 1
-			f.close()
+            if class_ is None:
+                code = f"<{block} {attrs}>{text}"
+
+            else:
+                code = f'<{block} {attrs} class = "{class_}">{text}'
+
+            self.name = block
+
+
+            f.write(code)
+            f.write("\n")
+            self.is_open = 1
+            f.close()
 
                 
-	def exit(self):
-		with open(f"{self.filename}.html","a") as f :
-			f.write(f"</{self.name}>")
-			f.write("\n")
-			f.close()
+    def exit(self):
+        with open(f"{self.filename}.html","a") as f :
+            f.write(f"</{self.name}>")
+            f.write("\n")
+            f.close()
 
 
 
