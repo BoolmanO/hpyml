@@ -1,4 +1,4 @@
-from fileinput import filename
+
 from hpyml import hpyml,block
 
 pyml = hpyml(filename="susindex",css_name="sustyle")
